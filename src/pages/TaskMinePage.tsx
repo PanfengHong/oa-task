@@ -1,6 +1,19 @@
+import { useState, useEffect } from 'react'
+import { getTasks } from '../api'
 import '../module.css'
 
 export function TaskMinePage() {
+  const [tasks, setTasks] = useState([])
+
+  useEffect(() => {
+    getTasks().then(res => {
+      console.log("tasks", res)
+      if(res.code === 200) {
+        setTasks(res.data)
+      }
+    })
+  }, [])
+
   return (
     <div className="oa-module-page">
       <h2>我的任务</h2>
