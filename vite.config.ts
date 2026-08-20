@@ -11,7 +11,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-      '@zdy-oa/utils': resolve(__dirname, '../oa-utils/src/index.ts'),
     },
   },
   build: {
@@ -28,6 +27,7 @@ export default defineConfig({
         'react/jsx-runtime',
         'react-router',
         'react-router-dom',
+        '@zdy-oa/utils'
       ],
     },
   },
